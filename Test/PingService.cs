@@ -23,7 +23,8 @@ public class PingService : BackgroundService
     public async Task<HttpResponseMessage> PingToUrl()
     {
         var client = new HttpClient();
-        return await client.GetAsync("https://savdo.uzavtosanoat.uz/t/ap/stream/ph&models");
+        var result = await client.GetAsync("https://savdo.uzavtosanoat.uz/t/ap/stream/ph&models");
+        return result;
     }
 
     public async void SendToUseFromTelegramBot(string message)
